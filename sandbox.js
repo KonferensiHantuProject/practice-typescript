@@ -1,32 +1,35 @@
-// Arrays
-var names = ['Anto', 'Anti', 'Antum'];
-// Error
-// names.push(3);
-// names[0] = 3;
-names.push('dragon');
-var numbers = [1, 2, 3, 4];
-// Error
-// numbers.push('oke');
-// numbers[0] = 'oce';
-numbers.push(5);
-// Mixed Array
-var mixed = ['anto', 11, 'nani', 4];
-mixed.push('oke');
-mixed.push(7);
-mixed[0] = 5;
-// Objects
-var ninja = {
-    name: 'tono',
-    belt: 'black',
-    age: 35
-};
-ninja.age = 50;
-ninja.name = 'dragon';
-// Error
-// ninja.age = '50';
-// ninja.skills = [];
-ninja = {
-    name: 'tono',
-    belt: 'black',
-    age: 35
+// Explicit Types
+var character;
+var age;
+var isLoggedIn;
+// Errors
+// age = 'test';
+age = 30;
+// Errors
+// isLoggedIn = 21;
+isLoggedIn = false;
+// arrays
+var ninjas = [];
+// ninjas = [1, 4];
+ninjas.push('nani');
+// Union types
+var mixed = [];
+mixed.push('nani');
+mixed.push(12);
+mixed.push(false);
+console.log(mixed);
+// More than one types for variable
+var uid;
+uid = '123';
+uid = 123;
+// objects
+var ninjaOne;
+ninjaOne = { name: 'yoshi', age: 45 };
+var ninjaTwo;
+// Errors
+// ninjaTwo = {}
+ninjaTwo = {
+    name: "Toni",
+    age: 44,
+    belt: 'Red'
 };

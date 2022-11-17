@@ -1,40 +1,50 @@
-// Arrays
-let names = ['Anto', 'Anti', 'Antum'];
+// Explicit Types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-// Error
-// names.push(3);
-// names[0] = 3;
-names.push('dragon');
+// Errors
+// age = 'test';
+age = 30;
 
-let numbers = [1, 2, 3, 4];
+// Errors
+// isLoggedIn = 21;
+isLoggedIn = false;
 
-// Error
-// numbers.push('oke');
-// numbers[0] = 'oce';
-numbers.push(5);
 
-// Mixed Array
-let mixed = ['anto', 11, 'nani', 4];
-mixed.push('oke');
-mixed.push(7);
-mixed[0] = 5;
+// arrays
+let ninjas: string[] = [];
 
-// Objects
-let ninja = {
-    name: 'tono',
-    belt: 'black',
-    age: 35
+// ninjas = [1, 4];
+ninjas.push('nani');
+
+
+// Union types
+let mixed: (string|number|boolean)[] = [];
+mixed.push('nani');
+mixed.push(12);
+mixed.push(false);
+console.log(mixed);
+
+// More than one types for variable
+let uid: string|number;
+uid = '123';
+uid = 123;
+
+// objects
+let ninjaOne: Object;
+ninjaOne = { name: 'yoshi', age: 45 }
+
+let ninjaTwo: {
+    name: string,
+    age: number,
+    belt: string
 };
 
-ninja.age = 50;
-ninja.name = 'dragon';
-
-// Error
-// ninja.age = '50';
-// ninja.skills = [];
-
-ninja = {
-    name: 'tono',
-    belt: 'black',
-    age: 35
-};
+// Errors
+// ninjaTwo = {}
+ninjaTwo = {
+    name: "Toni",
+    age: 44,
+    belt: 'Red'
+}
