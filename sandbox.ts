@@ -1,11 +1,28 @@
-const character = 'anto';
+// String
+let character = 'anto';
 
-console.log(character);
+// Number
+let age = 30;
 
-const inputs = document.querySelectorAll('input');
+// Boolean
+let isBlackBelt = false;
 
-console.log(inputs)
+// Error for String
+// character = 20;
+character = 'Antonio';
 
-inputs.forEach(input => {
-    console.log(input);
-});
+// Error For number
+// age = 'young';
+age = 40;
+
+// Error For number
+// isBlackBelt = 'yes';
+isBlackBelt = true;
+
+const circ = (diameter: number) => {
+    return diameter * Math.PI;
+}
+
+// Error
+// console.log(circ('hello'))
+console.log(circ(5))
