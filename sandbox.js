@@ -1,21 +1,32 @@
-// String
-var character = 'anto';
-// Number
-var age = 30;
-// Boolean
-var isBlackBelt = false;
-// Error for String
-// character = 20;
-character = 'Antonio';
-// Error For number
-// age = 'young';
-age = 40;
-// Error For number
-// isBlackBelt = 'yes';
-isBlackBelt = true;
-var circ = function (diameter) {
-    return diameter * Math.PI;
-};
+// Arrays
+var names = ['Anto', 'Anti', 'Antum'];
 // Error
-// console.log(circ('hello'))
-console.log(circ(5));
+// names.push(3);
+// names[0] = 3;
+names.push('dragon');
+var numbers = [1, 2, 3, 4];
+// Error
+// numbers.push('oke');
+// numbers[0] = 'oce';
+numbers.push(5);
+// Mixed Array
+var mixed = ['anto', 11, 'nani', 4];
+mixed.push('oke');
+mixed.push(7);
+mixed[0] = 5;
+// Objects
+var ninja = {
+    name: 'tono',
+    belt: 'black',
+    age: 35
+};
+ninja.age = 50;
+ninja.name = 'dragon';
+// Error
+// ninja.age = '50';
+// ninja.skills = [];
+ninja = {
+    name: 'tono',
+    belt: 'black',
+    age: 35
+};
