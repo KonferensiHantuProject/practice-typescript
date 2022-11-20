@@ -1,15 +1,15 @@
 import { HasFormatter } from '../interfaces/HasFormatter.js';
 
 // Classes
-export class Invoice implements HasFormatter{
+export class Payment implements HasFormatter{
     // Constructor for the data
     constructor(
-        readonly client: string,
+        readonly recipient: string,
         private detail: string,
         public amount: number
     ){}
 
     format() {
-        return `${this.client} Berhutang sebesar £${this.amount} untuk ${this.detail}`
+        return `${this.recipient} Berhutang sebesar £${this.amount} untuk ${this.detail}`
     }
 }
