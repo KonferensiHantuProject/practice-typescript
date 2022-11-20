@@ -1,11 +1,31 @@
 "use strict";
-// const anchor = document.querySelector('a')!;
-// // First Way
-// // if(anchor){
-// //     console.log(anchor.href);
-// // }
-// // Second way
-// console.log(anchor.href);
+// Classes
+class Invoice {
+    // Constructor for the data
+    constructor(c, d, a) {
+        this.client = c;
+        this.detail = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} Berhutang sebesar £${this.amount} untuk ${this.detail}`;
+    }
+}
+const invOne = new Invoice('mario', 'bekerja untuk web bone', 250);
+const invTwo = new Invoice('luigi', 'bekerja untuk web bone', 350);
+// console.log(invOne);
+// console.log(invTwo);
+let invoices = [];
+// Error
+// invoices.push('string')
+// Work
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+invOne.client = 'Anto';
+invTwo.amount = 400;
+console.log(invOne);
+console.log(invTwo);
 // const form = document.querySelector('form')!;
 const form = document.querySelector('.new-item-form');
 // console.log(form.children);
