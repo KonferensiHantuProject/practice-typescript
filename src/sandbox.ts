@@ -1,34 +1,14 @@
-let greet: Function;
+type StringOrNumber = string | number;
+type ObjectWithName = {name: string, uid: StringOrNumber};
 
-// greet = 'Hello';
-
-greet = () => {
-    console.log('Halo Lagi')
+const logDetails = (uid: StringOrNumber, item: string) => {
+    console.log(`${item} mempunyai uid ${uid}`)
 }
 
-// Optional
-// const add = (a: number, b: number, c?: number|string) => {
-//     console.log(a + b);
-//     console.log(c);
-// }
-
-const add = (a: number, b: number, c: number|string = 10) => {
-    console.log(a + b);
-    console.log(c);
+const greet = (user: ObjectWithName) => {
+    console.log(`${user.name} Menyapa`)
 }
 
-add(5, 10, '20')
-
-// Return rype explicitly
-// const minus = (a: number, b: number):number => {
-//     return a + b;
-// }
-
-const minus = (a: number, b: number) => {
-    return a + b;
+const greetAgain = (user: ObjectWithName) => {
+    console.log(`${user.name} Menyapa Lagi`)
 }
-
-let result = minus(10, 7);
-
-// Errors
-// result = 'something'
