@@ -1,32 +1,7 @@
 import { Invoice } from './classes/Invoice.js'
-import { Payment } from './classes/payment.js'
+import { ListTepmlate } from './classes/ListTemplate.js';
+import { Payment } from './classes/Payment.js'
 import { HasFormatter } from './interfaces/HasFormatter.js'
-
-// let docOne: HasFormatter;
-// let docTwo: HasFormatter;
-
-// docOne = new Invoice('tontom', 'kerjaan web', 200);
-// docTwo = new Payment('nono', 'pengairan', 290);
-
-// let docs: HasFormatter[] = [];
-// docs.push(docOne);
-// docs.push(docTwo);
-
-// console.log(docs);
-
-
-// const invOne = new Invoice('mario', 'bekerja untuk web bone', 250);
-// const invTwo = new Invoice('luigi', 'bekerja untuk web bone', 350);
-
-// let invoices: Invoice[] = [];
-
-// invoices.push(invOne)
-// invoices.push(invTwo)
-
-// invoices.forEach(inv => {
-//     // inv.client = 'sesuatu';
-//     console.log(inv.client, inv.amount, inv.format())
-// });
 
 // const form = document.querySelector('form')!;
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
@@ -39,6 +14,10 @@ const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
+// List Template instance
+const ul = document.querySelector('ul')!;
+const list = new ListTepmlate(ul);
+
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
@@ -50,5 +29,5 @@ form.addEventListener('submit', (e: Event) => {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
 
-    console.log(doc)
+    list.render(doc, type.value, 'end');
 })
