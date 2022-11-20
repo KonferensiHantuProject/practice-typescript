@@ -1,4 +1,21 @@
-import { Invoice } from './classes/invoice.js';
+// Example of Interface Use
+const me = {
+    name: 'anto',
+    age: 30,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log('I spent', amount);
+        return amount;
+    }
+};
+const greetPerson = (person) => {
+    console.log('hello', person.name);
+};
+greetPerson(me);
+console.log(me);
+import { Invoice } from './classes/Invoice.js';
 const invOne = new Invoice('mario', 'bekerja untuk web bone', 250);
 const invTwo = new Invoice('luigi', 'bekerja untuk web bone', 350);
 let invoices = [];

@@ -1,4 +1,33 @@
-import { Invoice } from './classes/invoice.js'
+// Interface
+interface isPerson{
+    name: string;
+    age: number;
+    speak(a: string,): void;
+    spend(a: number): number;
+}
+
+// Example of Interface Use
+const me: isPerson = {
+    name: 'anto',
+    age: 30,
+    speak(text: string): void{
+        console.log(text);
+    },
+    spend(amount: number): number{
+        console.log('I spent', amount);
+        return amount;
+    }
+}
+
+const greetPerson = (person: isPerson) => {
+    console.log('hello', person.name)
+}
+
+greetPerson(me);
+
+console.log(me);
+
+import { Invoice } from './classes/Invoice.js'
 
 const invOne = new Invoice('mario', 'bekerja untuk web bone', 250);
 const invTwo = new Invoice('luigi', 'bekerja untuk web bone', 350);
