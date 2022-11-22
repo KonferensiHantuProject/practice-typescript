@@ -34,18 +34,3 @@ form.addEventListener('submit', (e: Event) => {
 
     list.render(doc, type.value, 'end');
 })
-
-
-// Tuples
-let arr  = ['nono', 43, true];
-arr[0] = false;
-arr[1] = 'mario';
-arr[2] = 12;
-
-let tup: [string, number, boolean] = ['naga', 21, true];
-// let tup: [string, number, boolean] = [1, 21, true];
-// tup[0] = false;
-tup[0] = 'bonar';
-
-let student: [string, number];
-student = ['john', 2121]
