@@ -23,43 +23,29 @@ form.addEventListener('submit', (e: Event) => {
 
     let doc: HasFormatter;
 
+    let values: [string, string, number];
+    values = [tofrom.value, details.value, amount.valueAsNumber];
+
     if(type.value === 'invoice'){
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }else{
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
 
     list.render(doc, type.value, 'end');
 })
 
 
-// Enums
+// Tuples
+let arr  = ['nono', 43, true];
+arr[0] = false;
+arr[1] = 'mario';
+arr[2] = 12;
 
-enum ResourceType { BUKU, PENULIS, FILM, DIREKTUR, ORANG}
+let tup: [string, number, boolean] = ['naga', 21, true];
+// let tup: [string, number, boolean] = [1, 21, true];
+// tup[0] = false;
+tup[0] = 'bonar';
 
-interface Resiurce <T> {
-    uid: number;
-    resourceType: number;
-    data: T;
-}
-
-const docOne: Resiurce<object> = {
-    uid: 1,
-    resourceType: ResourceType.BUKU,
-    data: { title: 'nama' }
-}
-
-const docTwo: Resiurce<object> = {
-    uid: 10,
-    resourceType: ResourceType.DIREKTUR,
-    data: { title: 'angin' }
-}
-
-console.log(docOne);
-console.log(docTwo);
-
-// const docOne: Resiurce<object> = {
-//     uid: 1,
-//     resourceType: 3,
-//     data: { title: 'nama' }
-// }
+let student: [string, number];
+student = ['john', 2121]

@@ -15,37 +15,24 @@ const list = new ListTepmlate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let doc;
+    let values;
+    values = [tofrom.value, details.value, amount.valueAsNumber];
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, 'end');
 });
-// Enums
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["BUKU"] = 0] = "BUKU";
-    ResourceType[ResourceType["PENULIS"] = 1] = "PENULIS";
-    ResourceType[ResourceType["FILM"] = 2] = "FILM";
-    ResourceType[ResourceType["DIREKTUR"] = 3] = "DIREKTUR";
-    ResourceType[ResourceType["ORANG"] = 4] = "ORANG";
-})(ResourceType || (ResourceType = {}));
-const docOne = {
-    uid: 1,
-    resourceType: ResourceType.BUKU,
-    data: { title: 'nama' }
-};
-const docTwo = {
-    uid: 10,
-    resourceType: ResourceType.DIREKTUR,
-    data: { title: 'angin' }
-};
-console.log(docOne);
-console.log(docTwo);
-// const docOne: Resiurce<object> = {
-//     uid: 1,
-//     resourceType: 3,
-//     data: { title: 'nama' }
-// }
+// Tuples
+let arr = ['nono', 43, true];
+arr[0] = false;
+arr[1] = 'mario';
+arr[2] = 12;
+let tup = ['naga', 21, true];
+// let tup: [string, number, boolean] = [1, 21, true];
+// tup[0] = false;
+tup[0] = 'bonar';
+let student;
+student = ['john', 2121];
