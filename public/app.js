@@ -23,26 +23,29 @@ form.addEventListener('submit', (e) => {
     }
     list.render(doc, type.value, 'end');
 });
-// Generics
-// const addUID = <T extends object>(obj: T) => {
-const addUID = (obj) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
+// Enums
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BUKU"] = 0] = "BUKU";
+    ResourceType[ResourceType["PENULIS"] = 1] = "PENULIS";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIREKTUR"] = 3] = "DIREKTUR";
+    ResourceType[ResourceType["ORANG"] = 4] = "ORANG";
+})(ResourceType || (ResourceType = {}));
+const docOne = {
+    uid: 1,
+    resourceType: ResourceType.BUKU,
+    data: { title: 'nama' }
 };
-let docOne = addUID({ name: 'anton', age: 31 });
-// Error
-// let docTwo = addUID('hai');
-// let docThree = addUID({age: 3});
-console.log(docOne.age);
-const docFour = {
-    uid: 12,
-    resourceName: 'orang',
-    data: 'as'
+const docTwo = {
+    uid: 10,
+    resourceType: ResourceType.DIREKTUR,
+    data: { title: 'angin' }
 };
-const docFive = {
-    uid: 32,
-    resourceName: 'orang lain',
-    data: ['as', 'da']
-};
-console.log(docFour);
-console.log(docFive);
+console.log(docOne);
+console.log(docTwo);
+// const docOne: Resiurce<object> = {
+//     uid: 1,
+//     resourceType: 3,
+//     data: { title: 'nama' }
+// }
